@@ -58,9 +58,10 @@ Accounts to test different roles:
 - employee@campusdesk.dev  
 
 **Password:** `DemoPass!123`
+> This step also seeds demo data for testing.
 
 ---
-### 1. Start Backend
+## 1. Start Backend
 
 -cd backend
 -npm install
@@ -71,7 +72,7 @@ Accounts to test different roles:
 -npm run dev
 
 
-### 2. Frontend Setup
+## 2. Frontend Setup
 
 Start the frontend in a new terminal:
 
