@@ -62,7 +62,6 @@ Accounts to test different roles:
 ---
 ### 1. Start Backend
 
-```bash
 cd backend
 npm install
 copy .env.example .env
@@ -71,3 +70,11 @@ npx prisma migrate dev
 node prisma/seed.js
 npm run dev
 
+
+### 2. Frontend Setup
+
+Start the frontend in a new terminal:
+
+cd frontend
+npm install
+npm run dev
