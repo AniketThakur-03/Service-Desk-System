@@ -71,18 +71,8 @@ npx prisma generate
 npx prisma migrate dev
 node prisma/seed.js
 npm run dev
-
-
 ---
-
-#  Fix frontend too
-
-```md id="fixfrontend"
-### 2. Frontend Setup
-
-Start the frontend in a new terminal:
-
-```bash
+# Frontend
 cd frontend
 npm install
 npm run dev
