@@ -49,10 +49,20 @@ The platform combines ticket management, asset tracking, analytics, and operatio
 - PostgreSQL
 - Prisma ORM
 
----
-### 1. Start Backend
+## Demo Access
 
+Accounts to test different roles:
+
+- admin@campusdesk.dev  
+- agent@campusdesk.dev  
+- employee@campusdesk.dev  
+
+**Password:** `DemoPass!123`
+> This step also seeds demo data for testing.
+
+---
 ```bash
+#Backend
 cd backend
 npm install
 copy .env.example .env
@@ -60,4 +70,8 @@ npx prisma generate
 npx prisma migrate dev
 node prisma/seed.js
 npm run dev
-
+---
+# Frontend
+cd frontend
+npm install
+npm run dev
