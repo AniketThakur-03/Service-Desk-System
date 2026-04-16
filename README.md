@@ -61,11 +61,3 @@ npx prisma migrate dev
 node prisma/seed.js
 npm run dev
 
----
-
-### 2. Start Frontend (open a new terminal)
-
-```bash
-cd frontend
-npm install
-npm run dev
