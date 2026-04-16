@@ -51,15 +51,13 @@ The platform combines ticket management, asset tracking, analytics, and operatio
 
 ## Demo Access
 
-Use these accounts to test different roles:
+Accounts to test different roles:
 
 - admin@campusdesk.dev  
 - agent@campusdesk.dev  
 - employee@campusdesk.dev  
 
 **Password:** `DemoPass!123`
-
-> Note: Run the seed script if demo data is not available.
 
 ---
 ### 1. Start Backend
