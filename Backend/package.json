@@ -1,0 +1,38 @@
+{
+  "name": "service-desk-backend",
+  "version": "1.1.0",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:seed": "node prisma/seed.js",
+    "setup": "npm run prisma:generate && npm run prisma:push && npm run prisma:seed",
+    "make:admin": "node src/makeAdmin.js"
+  },
+  "keywords": [
+    "service-desk",
+    "express",
+    "prisma",
+    "sqlite",
+    "rbac",
+    "ticketing"
+  ],
+  "license": "MIT",
+  "description": "Backend API for a service desk portfolio project",
+  "dependencies": {
+    "@prisma/client": "^6.19.2",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "prisma": "^6.19.2",
+    "zod": "^4.3.6"
+  }
+}
