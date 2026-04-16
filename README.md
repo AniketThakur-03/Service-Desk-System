@@ -61,9 +61,8 @@ Accounts to test different roles:
 > This step also seeds demo data for testing.
 
 ---
-### 1. Start Backend
-
 ```bash
+#Backend
 cd backend
 npm install
 copy .env.example .env
