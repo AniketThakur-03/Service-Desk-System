@@ -61,21 +61,28 @@ Accounts to test different roles:
 > This step also seeds demo data for testing.
 
 ---
-## 1. Start Backend
+### 1. Start Backend
 
--cd backend
--npm install
--copy .env.example .env
--npx prisma generate
--npx prisma migrate dev
--node prisma/seed.js
--npm run dev
+```bash
+cd backend
+npm install
+copy .env.example .env
+npx prisma generate
+npx prisma migrate dev
+node prisma/seed.js
+npm run dev
 
 
-## 2. Frontend Setup
+---
+
+#  Fix frontend too
+
+```md id="fixfrontend"
+### 2. Frontend Setup
 
 Start the frontend in a new terminal:
 
--cd frontend
--npm install
--npm run dev
+```bash
+cd frontend
+npm install
+npm run dev
