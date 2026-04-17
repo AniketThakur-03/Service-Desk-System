@@ -1,62 +1,85 @@
 # IT Service Desk & Asset Management System
 
 ## Overview
-This project is a full-stack IT service desk platform designed to simulate a real internal support system. It allows employees to create and track support requests, while administrators and agents manage tickets, monitor operations, and maintain system visibility.
+This project is a full-stack IT service desk system designed to model how internal IT teams handle support operations. It includes ticket workflows, automated assignment, SLA monitoring, and asset tracking — similar to real-world tools used in enterprise environments.
 
-The platform combines ticket management, asset tracking, analytics, and operational workflows into a single system.
+The system allows employees to raise support requests, while agents and administrators manage tickets, monitor workloads, and maintain operational visibility.
+
+---
+
+## What This System Demonstrates
+
+- Designing a real-world ticketing workflow with lifecycle management  
+- Implementing role-based access control across multiple user types  
+- Automating workload distribution using smart assignment logic  
+- Tracking SLA performance and system activity using analytics and audit logs  
+- Building a secure backend with authentication, validation, and rate limiting  
 
 ---
 
 ## Key Features
 
 ### Ticket Management
-- Create and track support requests
-- Full ticket lifecycle: Open -> In Progress -> Waiting -> Resolved -> Closed
-- Priority and category-based organization
-- Comments and internal notes for collaboration
+- Create and track support requests  
+- Full lifecycle: Open → In Progress → Waiting → Resolved → Closed  
+- Priority and category-based organization  
+- Comments and internal notes for collaboration  
+
+---
 
 ### Role-Based Access Control
-- Admin -> full system access  
-- Agent -> manages assigned requests  
-- Employee -> creates and tracks own requests  
+- **Admin** → full system access  
+- **Agent** → manages assigned tickets  
+- **Employee** → creates and tracks own tickets  
+
+---
 
 ### Smart Assignment (Auto-Assign)
-- New tickets are automatically assigned to the **least busy available agent**
-- Balances workload across the support team
-- Reduces manual assignment effort
-- Assignment is tracked in ticket history and reflected in dashboard analytics
+- Automatically assigns new tickets to the **least busy available agent**  
+- Balances workload across the support team  
+- Reduces manual assignment effort  
+- Tracks assignment history for auditing and analytics  
+
+---
 
 ### Dashboard & Analytics
-- Ticket status distribution (Open / Resolved / At Risk)
-- Agent workload visualization
-- Recent activity tracking
-- SLA monitoring
+- Ticket status distribution (Open / Resolved / At Risk)  
+- Agent workload visualization  
+- Recent activity tracking  
+- SLA monitoring and overdue detection  
+
+---
 
 ### Asset Management
-- Track devices such as laptops, printers, and equipment
-- Link assets to support requests
-- View assignment and usage details
+- Track devices such as laptops, printers, and equipment  
+- Link assets to support requests  
+- View assignment and usage history  
+
+---
 
 ### Knowledge Base
-- Store reusable solutions and troubleshooting guides
-- Helps simulate real support workflows
+- Store reusable solutions and troubleshooting guides  
+- Simulates real-world support documentation workflows  
 
 ---
 
 ## Security Features
-- Password hashing for secure credential storage
-- JWT-based authentication
-- Role-based authorization for protected routes
-- Rate limiting on authentication endpoints
-- Account lockout after repeated failed login attempts
-- Input validation and request sanitization
-- Audit logging for key system actions
+- Password hashing for secure credential storage  
+- JWT-based authentication  
+- Role-based authorization for protected routes  
+- Rate limiting on authentication endpoints  
+- Account lockout after repeated failed login attempts  
+- Input validation and request sanitization  
+- Audit logging for key system actions  
 
 ---
-### Architecture
-- **Frontend (React + Vite):** Handles UI rendering, state management, and API integration
-- **Backend (Node.js + Express):** Manages business logic, authentication, and API endpoints
-- **Database (PostgreSQL + Prisma):** Stores users, tickets, assets, and system logs
+
+## Architecture
+
+- **Frontend (React + Vite):** Handles UI rendering, state management, and API communication  
+- **Backend (Node.js + Express):** Manages business logic, authentication, and API endpoints  
+- **Database (PostgreSQL + Prisma):** Stores users, tickets, assets, and system logs  
+
 ---
 
 ## Tech Stack
@@ -74,16 +97,19 @@ The platform combines ticket management, asset tracking, analytics, and operatio
 - PostgreSQL  
 - Prisma ORM  
 
+---
 
 ## Demo Access
 
-Accounts to test different roles:
+Use these accounts to test different roles:
 
 - admin@campusdesk.dev  
 - agent@campusdesk.dev  
 - employee@campusdesk.dev  
 
 **Password:** `DemoPass!123`
+
+---
 
 ## Screenshots
 
