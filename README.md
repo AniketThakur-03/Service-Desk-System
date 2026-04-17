@@ -1,53 +1,74 @@
 # IT Service Desk & Asset Management System
 
 ## Overview
-This project is a full-stack IT service desk platform designed to simulate a real internal support system. It allows employees to create and track support requests, while administrators and agents manage tickets, monitor operations, and maintain system visibility.
+This project is a full-stack IT service desk platform built to simulate how internal support systems work in real companies.
 
-The platform combines ticket management, asset tracking, analytics, and operational workflows into a single system.
+The goal was to go beyond a basic CRUD application and design something closer to tools like Jira Service Management or Freshdesk. The system allows employees to raise support requests, agents to manage and resolve them, and admins to monitor activity across the platform.
 
 ---
 
-## Features
+## Key Features
 
-### Core Functionality
-- User authentication (login, register, logout)
-- Role-based access control (Admin, Agent, Employee)
-- Ticket lifecycle management (create -> assign -> resolve -> close)
-- SLA tracking and overdue detection
-- Asset management with ticket linking
-- Knowledge base for reusable solutions
-- In-app notifications
-- Dashboard with analytics and charts
+### Ticket Management
+- Create and track support requests
+- Full ticket lifecycle: Open -> In Progress -> Waiting -> Resolved -> Closed
+- Priority and category-based organization
+- Comments and internal notes for collaboration
+
+### Role-Based Access Control
+- Admin -> full system access  
+- Agent -> manages assigned requests  
+- Employee -> creates and tracks own requests  
+
+### Smart Assignment (Auto-Assign)
+- New tickets are automatically assigned to the **least busy available agent**
+- Balances workload across the support team
+- Reduces manual assignment effort
+- Assignment is tracked in ticket history and reflected in dashboard analytics
+
+### Dashboard & Analytics
+- Ticket status distribution (Open / Resolved / At Risk)
+- Agent workload visualization
+- Recent activity tracking
+- SLA monitoring
+
+### Asset Management
+- Track devices such as laptops, printers, and equipment
+- Link assets to support requests
+- View assignment and usage details
+
+### Knowledge Base
+- Store reusable solutions and troubleshooting guides
+- Helps simulate real support workflows
 
 ---
 
 ## Security Features
-
 - Password hashing for secure credential storage
-- Rate limiting on authentication endpoints to prevent brute-force attacks
+- JWT-based authentication
+- Role-based authorization for protected routes
+- Rate limiting on authentication endpoints
 - Account lockout after repeated failed login attempts
-- Role-based access control for protected routes
 - Input validation and request sanitization
-- Secure token-based authentication (JWT)
-- Audit logging for sensitive actions and system events
-- Security event tracking (login abuse, access denials, rate-limit triggers)
+- Audit logging for key system actions
 
 ---
 
 ## Tech Stack
 
 ### Frontend
-- React
-- Vite
-- Recharts (for dashboard analytics)
+- React  
+- Vite  
+- Recharts  
 
 ### Backend
-- Node.js
-- Express
+- Node.js  
+- Express  
 
 ### Database
-- PostgreSQL
-- Prisma ORM
+- PostgreSQL  
+- Prisma ORM  
+
 
 ## Demo Access
 

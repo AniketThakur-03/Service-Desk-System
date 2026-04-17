@@ -7,7 +7,13 @@ import { colors, styles, getPriorityTone, getStatusTone } from "../styles.js";
 export default function TicketsPage() {
   const [tickets, setTickets] = useState([]);
   const [assets, setAssets] = useState([]);
-  const [filters, setFilters] = useState({ q: "", status: "", priority: "", category: "", overdue: "" });
+  const [filters, setFilters] = useState({
+    q: "",
+    status: "",
+    priority: "",
+    category: "",
+    overdue: "",
+  });
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -19,7 +25,10 @@ export default function TicketsPage() {
 
   async function load(current = filters) {
     try {
-      const [ticketRes, assetRes] = await Promise.all([api.listTickets(current), api.getAssets()]);
+      const [ticketRes, assetRes] = await Promise.all([
+        api.listTickets(current),
+        api.getAssets(),
+      ]);
       setTickets(ticketRes.tickets || []);
       setAssets(assetRes.assets || []);
       setErr("");
@@ -54,9 +63,9 @@ export default function TicketsPage() {
       <NavBar />
       <div style={styles.container}>
         <div style={styles.hero}>
-          <h1 style={{ margin: 0 }}>Tickets</h1>
+          <h1 style={{ margin: 0 }}>Support Requests</h1>
           <p style={{ marginTop: 10, color: "rgba(255,255,255,0.86)" }}>
-            Submit requests, review the queue, and connect support work to tracked devices.
+            Create new requests, review the current queue, and link issues to tracked devices when needed.
           </p>
         </div>
 
@@ -75,24 +84,33 @@ export default function TicketsPage() {
           </div>
         ) : null}
 
-        <div style={{ display: "grid", gridTemplateColumns: "0.95fr 1.05fr", gap: 16, marginTop: 18 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "0.95fr 1.05fr",
+            gap: 16,
+            marginTop: 18,
+          }}
+        >
           <form onSubmit={createTicket} style={styles.card}>
-            <div style={{ ...styles.sectionTitle, marginBottom: 8 }}>Submit a support request</div>
+            <div style={{ ...styles.sectionTitle, marginBottom: 8 }}>
+              Create a new request
+            </div>
             <div style={{ fontSize: 13, color: colors.muted, marginBottom: 12 }}>
-              Log a new issue and optionally connect it to an existing device.
+              Enter the issue details below and link an asset if the request is related to a tracked device.
             </div>
 
             <div style={{ display: "grid", gap: 10 }}>
               <input
                 style={styles.input}
-                placeholder="Title"
+                placeholder="Short summary"
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
               />
 
               <textarea
                 style={styles.textarea}
-                placeholder="Describe the issue"
+                placeholder="Describe what happened, what is affected, and any useful details"
                 value={form.description}
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
               />
@@ -128,12 +146,18 @@ export default function TicketsPage() {
                 ))}
               </select>
 
-              <button style={styles.button}>Create ticket</button>
+              <button style={styles.button}>Submit request</button>
             </div>
           </form>
 
           <div style={styles.card}>
-            <div style={{ ...styles.sectionTitle, marginBottom: 12 }}>Ticket list</div>
+            <div style={{ ...styles.sectionTitle, marginBottom: 12 }}>
+              Request queue
+            </div>
+
+            <div style={{ fontSize: 13, color: colors.muted, marginBottom: 12 }}>
+              {tickets.length} request{tickets.length !== 1 ? "s" : ""} in the current view
+            </div>
 
             <div
               style={{
@@ -182,8 +206,12 @@ export default function TicketsPage() {
                 onChange={(e) => setFilters({ ...filters, category: e.target.value })}
               />
 
-              <button type="button" style={styles.secondaryButton} onClick={() => load(filters)}>
-                Apply
+              <button
+                type="button"
+                style={styles.secondaryButton}
+                onClick={() => load(filters)}
+              >
+                Apply filters
               </button>
             </div>
 
@@ -197,7 +225,7 @@ export default function TicketsPage() {
                   load(next);
                 }}
               >
-                At-risk tickets
+                Show at-risk
               </button>
 
               <button
@@ -216,12 +244,18 @@ export default function TicketsPage() {
                 type="button"
                 style={styles.ghostButton}
                 onClick={() => {
-                  const next = { q: "", status: "", priority: "", category: "", overdue: "" };
+                  const next = {
+                    q: "",
+                    status: "",
+                    priority: "",
+                    category: "",
+                    overdue: "",
+                  };
                   setFilters(next);
                   load(next);
                 }}
               >
-                Clear
+                Clear filters
               </button>
             </div>
 
@@ -262,7 +296,9 @@ export default function TicketsPage() {
               ))}
 
               {!tickets.length ? (
-                <div style={styles.softCard}>No tickets match the current view.</div>
+                <div style={styles.softCard}>
+                  No requests match the current filters.
+                </div>
               ) : null}
             </div>
           </div>

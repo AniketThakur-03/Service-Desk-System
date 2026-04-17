@@ -33,14 +33,21 @@ export default function LoginPage() {
   }
 
   const highlights = [
-    "Role-based sign-in",
-    "Ticket lifecycle tracking",
-    "Asset and device linkage",
-    "Queue and activity overview",
+    "Role-based access",
+    "Ticket status workflow",
+    "Asset-linked requests",
+    "Queue and workload visibility",
   ];
 
   return (
-    <div style={{ ...styles.page, display: "grid", placeItems: "center", padding: 24 }}>
+    <div
+      style={{
+        ...styles.page,
+        display: "grid",
+        placeItems: "center",
+        padding: 24,
+      }}
+    >
       <div
         style={{
           width: "100%",
@@ -57,18 +64,32 @@ export default function LoginPage() {
             background: "linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%)",
           }}
         >
-          <div style={styles.badge}>Support platform</div>
+          <div style={styles.badge}>IT support workspace</div>
 
           <h1 style={{ fontSize: 36, lineHeight: 1.15, margin: "16px 0 12px" }}>
-            Internal IT support, ticketing, and asset tracking in one place.
+            A central place to manage support requests, devices, and day-to-day IT work.
           </h1>
 
-          <p style={{ color: colors.muted, lineHeight: 1.7, margin: 0, maxWidth: 620 }}>
-            A full-stack service desk platform for managing support requests, tracking work in
-            progress, linking devices, and documenting common fixes.
+          <p
+            style={{
+              color: colors.muted,
+              lineHeight: 1.7,
+              margin: 0,
+              maxWidth: 620,
+            }}
+          >
+            Built around real support workflows so teams can log issues, manage progress,
+            connect assets, and keep common fixes in one place.
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, marginTop: 22 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: 12,
+              marginTop: 22,
+            }}
+          >
             {highlights.map((item) => (
               <div key={item} style={{ ...styles.softCard, padding: 16 }}>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{item}</div>
@@ -80,7 +101,7 @@ export default function LoginPage() {
         <div style={{ ...styles.card, padding: 28 }}>
           <h2 style={{ margin: "0 0 8px", fontSize: 28 }}>Sign in</h2>
           <p style={{ color: colors.muted, margin: "0 0 18px", lineHeight: 1.6 }}>
-            Use your account to view tickets, updates, and support activity.
+            Sign in to manage tickets, follow updates, and access your support workspace.
           </p>
 
           {err ? (
@@ -99,7 +120,10 @@ export default function LoginPage() {
             </div>
           ) : null}
 
-          <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <form
+            onSubmit={onSubmit}
+            style={{ display: "flex", flexDirection: "column", gap: 12 }}
+          >
             <input
               style={styles.input}
               placeholder="Email"
@@ -121,7 +145,7 @@ export default function LoginPage() {
           </form>
 
           <p style={{ marginTop: 16, color: colors.muted, fontSize: 14 }}>
-            Need an account? <Link to="/register">Create one here</Link>.
+            Need an account? <Link to="/register">Create one</Link>.
           </p>
         </div>
       </div>

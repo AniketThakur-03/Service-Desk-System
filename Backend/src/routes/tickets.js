@@ -75,6 +75,32 @@ function buildTicketWhere(req) {
   return where;
 }
 
+async function findLeastBusyAgent() {
+  const agents = await prisma.user.findMany({
+    where: { role: "AGENT" },
+    select: {
+      id: true,
+      email: true,
+      assignedTickets: {
+        where: {
+          status: {
+            in: ["OPEN", "IN_PROGRESS", "WAITING"],
+          },
+        },
+        select: { id: true },
+      },
+    },
+  });
+
+  if (!agents.length) return null;
+
+  const sortedAgents = agents.sort(
+    (a, b) => a.assignedTickets.length - b.assignedTickets.length
+  );
+
+  return sortedAgents[0];
+}
+
 router.get(
   "/",
   requireAuth,
@@ -113,6 +139,14 @@ router.post(
     const { title, description, priority, category, assetId } = parsed.data;
     const userId = req.user.userId || req.user.id;
 
+    let assigneeId = null;
+    let leastBusyAgent = null;
+
+    leastBusyAgent = await findLeastBusyAgent();
+    if (leastBusyAgent) {
+      assigneeId = leastBusyAgent.id;
+    }
+
     const ticket = await prisma.ticket.create({
       data: {
         title,
@@ -121,6 +155,7 @@ router.post(
         category: category || "General Support",
         requesterId: userId,
         assetId: assetId || null,
+        assigneeId, 
         slaDueAt: computeSlaDueAt(priority || "MEDIUM"),
       },
       include: {
@@ -148,13 +183,38 @@ router.post(
       });
     }
 
+    if (leastBusyAgent) {
+      await addTicketHistory({
+        ticketId: ticket.id,
+        action: "AUTO_ASSIGNED",
+        field: "assignee",
+        newValue: leastBusyAgent.email,
+        actor: req.user,
+      });
+    }
+
     await logAudit({
       action: "TICKET_CREATED",
       actor: req.user,
       targetType: "Ticket",
       targetId: ticket.id,
-      metadata: { title: ticket.title, priority: ticket.priority, category: ticket.category },
+      metadata: {
+        title: ticket.title,
+        priority: ticket.priority,
+        category: ticket.category,
+        autoAssignedTo: leastBusyAgent?.email || null,
+      },
     });
+
+    if (assigneeId) {
+      await createNotification({
+        userId: assigneeId,
+        title: "New ticket assigned",
+        body: ticket.title,
+        type: "ASSIGNMENT",
+        link: `/tickets/${ticket.id}`,
+      });
+    }
 
     res.status(201).json({ ticket });
   })
