@@ -33,6 +33,11 @@ The platform combines ticket management, asset tracking, analytics, and operatio
 - Security event tracking (login abuse, access denials, rate-limit triggers)
 
 ---
+### Architecture
+- **Frontend (React + Vite):** Handles UI rendering, state management, and API integration
+- **Backend (Node.js + Express):** Manages business logic, authentication, and API endpoints
+- **Database (PostgreSQL + Prisma):** Stores users, tickets, assets, and system logs
+---
 
 ## Tech Stack
 
