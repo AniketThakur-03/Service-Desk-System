@@ -103,7 +103,7 @@ Accounts to test different roles:
 ---
 
 ### Asset Management
-![Asset Management](./screenshots/assets.png)
+![Asset Management](./screenshots/assests.png)
 ---
 
 ### Knowledge Page
