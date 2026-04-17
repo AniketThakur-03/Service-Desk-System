@@ -58,13 +58,45 @@ Accounts to test different roles:
 - employee@campusdesk.dev  
 
 **Password:** `DemoPass!123`
-> This step also seeds demo data for testing.
+
+## Screenshots
+
+### Login Page
+![Login Page](./screenshots/login.png)
 
 ---
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+---
+
+### Tickets Page
+![Tickets Page](./screenshots/tickets.png)
+
+---
+
+### Asset Management
+![Asset Management](./screenshots/assets.png)
+---
+
+### Knowledge Page
+![Knowledge Page](./screenshots/Knowledge.png)
+---
+## What I Built/Learned
+
+- Built a full-stack IT service desk platform using React, Node.js, Express, PostgreSQL, and Prisma
+- Implemented JWT authentication and role-based access control for Admin, Agent, and Employee users
+- Designed ticket lifecycle workflows with SLA tracking and asset linking
+- Added security features such as rate limiting, account lockout, audit logging, and input validation
+- Improved project structure, UI flow, and documentation to make the system easier to run and demonstrate
+---
+```md
 ## Getting Started
+
 ```bash
 # Backend
-cd backend
+cd Backend
 npm install
 copy .env.example .env
 npx prisma generate
@@ -72,7 +104,12 @@ npx prisma migrate dev
 node prisma/seed.js
 npm run dev
 
+# Open new terminal
+
 # Frontend
-cd frontend
+cd Frontend
 npm install
 npm run dev
+
+
+
