@@ -1,9 +1,9 @@
 # IT Service Desk & Asset Management System
 
 ## Overview
-This project is a full-stack IT service desk platform built to simulate how internal support systems work in real companies.
+This project is a full-stack IT service desk platform designed to simulate a real internal support system. It allows employees to create and track support requests, while administrators and agents manage tickets, monitor operations, and maintain system visibility.
 
-The goal was to go beyond a basic CRUD application and design something closer to tools like Jira Service Management or Freshdesk. The system allows employees to raise support requests, agents to manage and resolve them, and admins to monitor activity across the platform.
+The platform combines ticket management, asset tracking, analytics, and operational workflows into a single system.
 
 ---
 
@@ -53,6 +53,11 @@ The goal was to go beyond a basic CRUD application and design something closer t
 - Audit logging for key system actions
 
 ---
+### Architecture
+- **Frontend (React + Vite):** Handles UI rendering, state management, and API integration
+- **Backend (Node.js + Express):** Manages business logic, authentication, and API endpoints
+- **Database (PostgreSQL + Prisma):** Stores users, tickets, assets, and system logs
+---
 
 ## Tech Stack
 
@@ -88,7 +93,7 @@ Accounts to test different roles:
 ---
 
 ### Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./screenshots/Dashboard1.png)
 
 ---
 
@@ -115,7 +120,6 @@ Accounts to test different roles:
 ```md
 ## Getting Started
 
-```bash
 # Backend
 cd Backend
 npm install
