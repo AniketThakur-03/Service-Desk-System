@@ -94,7 +94,6 @@ Accounts to test different roles:
 ```md
 ## Getting Started
 
-```bash
 # Backend
 cd Backend
 npm install
