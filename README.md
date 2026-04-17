@@ -60,6 +60,29 @@ Accounts to test different roles:
 **Password:** `DemoPass!123`
 > This step also seeds demo data for testing.
 
+## Screenshots
+
+### Login Page
+![Login Page](./screenshots/login.png)
+
+---
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+---
+
+### Tickets Page
+![Tickets Page](./screenshots/tickets.png)
+
+---
+
+### Asset Management
+![Asset Management](./screenshots/assets.png)
+---
+
+### Knowledge Page
+![Knowledge Page](./screenshots/Knowledge.png)
 ---
 ## Getting Started
 ```bash
