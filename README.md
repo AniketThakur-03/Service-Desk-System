@@ -67,7 +67,7 @@ Accounts to test different roles:
 ---
 
 ### Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./screenshots/Dashboard1.png)
 
 ---
 
