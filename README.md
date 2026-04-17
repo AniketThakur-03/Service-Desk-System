@@ -1,9 +1,10 @@
 # IT Service Desk & Asset Management System
 
 ## Overview
-This project is a full-stack IT service desk platform designed to simulate a real internal support system. It allows employees to create and track support requests, while administrators and agents manage tickets, monitor operations, and maintain system visibility.
+I built this project to understand how real IT service desk systems work, like Jira Service Management and Freshdesk.
 
-The platform combines ticket management, asset tracking, analytics, and operational workflows into a single system.
+The goal was to create a system where employees can raise support tickets, agents can manage and resolve them, and admins can track overall performance. Instead of a simple CRUD app, I focused on building a workflow-based system with roles, tracking, and analytics.
+
 
 ---
 
