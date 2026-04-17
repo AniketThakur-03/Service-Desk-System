@@ -58,7 +58,6 @@ Accounts to test different roles:
 - employee@campusdesk.dev  
 
 **Password:** `DemoPass!123`
-> This step also seeds demo data for testing.
 
 ## Screenshots
 
@@ -94,7 +93,6 @@ npx prisma generate
 npx prisma migrate dev
 node prisma/seed.js
 npm run dev
-
 # Frontend
 cd frontend
 npm install
