@@ -61,8 +61,9 @@ Accounts to test different roles:
 > This step also seeds demo data for testing.
 
 ---
+## Getting Started
 ```bash
-#Backend
+# Backend
 cd backend
 npm install
 copy .env.example .env
@@ -70,7 +71,7 @@ npx prisma generate
 npx prisma migrate dev
 node prisma/seed.js
 npm run dev
----
+
 # Frontend
 cd frontend
 npm install
