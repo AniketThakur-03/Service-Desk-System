@@ -21,16 +21,16 @@ The system allows employees to raise support requests, while agents and administ
 
 ### Ticket Management
 - Create and track support requests  
-- Full lifecycle: Open → In Progress → Waiting → Resolved → Closed  
+- Full lifecycle: Open -> In Progress -> Waiting -> Resolved -> Closed  
 - Priority and category-based organization  
 - Comments and internal notes for collaboration  
 
 ---
 
 ### Role-Based Access Control
-- **Admin** → full system access  
-- **Agent** → manages assigned tickets  
-- **Employee** → creates and tracks own tickets  
+- **Admin** -> full system access  
+- **Agent** -> manages assigned tickets  
+- **Employee** -> creates and tracks own tickets  
 
 ---
 
